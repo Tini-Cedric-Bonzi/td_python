@@ -1,40 +1,38 @@
-# Nous allons mettre en place  un programme qui affiche les 10 premiers nombres pairs en utilisant une boucle For#
-#Ensuite, nous allons utiliser une boucle while pour afficher les 10 premiers nombres#
-print("Les 10 premiers nombres pairs sont :")
-for i in range(1, 11):
-    print(i * 2)
+#exercice 1: nous allons mettre en place un programme qui nous permettre d'afficher les 10 premiers nombre pairs grace à for 
+# dans un deuxième temps nous allons creer une boucle while pour afficher les nombres impaire
+print("afficher les 10 premiers nombres pairs")
+for i in range (2, 21, 2):
+    print(i)
 
-
-print("\nLes 10 premiers nombres impairs sont :")
-j = 1
+print("afficher les 10 prmiers nombres impairs")
+number = 0
 count = 0
 while count < 10:
-    print(j)
-    j += 2
-    count += 1
+    if number  % 2 != 0:
+        print(number)
+        count += 1
+    number += 1
 
-    # Fonction pour demander un nombre à l'utilisateur et vérifier qu'il s'agit bien d'un nombre entier
+    # exercice 2: nous allons créer un programme qui va demander un nombre à l’utilisateur
+    # le programme va s’assurer que c’est bien un nombre qui a été inséré 
+    #  à la fin  il va afficher les nombres entier entre le 1 et le nombre fourni par l’utilisateur
+
+# nous allons tout d'abord mettre en place une fonction pour vérifier si l'entrée de l'utilisateur est un nombre
 def demander_nombre():
+# la fonction while permet de mettre en place une boucle qui prendra fin que lorsque un nombre entier sera inserer
     while True:
+# cette étape permettra de convertir l'entrer en entier grace au int, en cas d'échec elle sera conciderer comme une erreur et affichera le message indiquer
         try:
             nombre = int(input("Veuillez entrer un nombre entier: "))
             return nombre
         except ValueError:
-            print("Erreur : Veuillez entrer un nombre entier valide.")
+            print("Ce n'est pas un nombre entier. Veuillez réessayer.")
 
 # Demander le nombre à l'utilisateur
-nombre_utilisateur = demander_nombre()
+nombre = demander_nombre()
 
-# Afficher les nombres entiers entre 1 et le nombre fourni par l'utilisateur en utilisant une boucle For
-print("Affichage avec boucle For :")
-for i in range(1, nombre_utilisateur + 1):
-    print(i, end=" ")
-
-# Afficher les nombres entiers entre 1 et le nombre fourni par l'utilisateur en utilisant une boucle While
-print("\n\nAffichage avec boucle While :")
-i = 1
-while i <= nombre_utilisateur:
-    print(i, end=" ")
-    i += 1
-
+# Utilisation de la boucle for pour afficher les nombres de 1 à nombre choisis
+print("Affichage:")
+for i in range(1, nombre + 1):
+    print(i) 
 
