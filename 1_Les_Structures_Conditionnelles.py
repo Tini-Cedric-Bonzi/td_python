@@ -1,31 +1,21 @@
-# nous allons definir un programme qui permettra à un utlisateur de connaitre sa mention en fonction de sa note #
-def obtenir_note():
-    while True:
-        note = input("Veuillez entrer une note (0-20) : ")
-        if note.replace('.', '', 1).isdigit():
-            note = float(note)
-            if 0 <= note <= 20:
-                return note
-        print("Entrée invalide, veuillez entrer une note entre 0 et 20.")
+# nous allons rediger un programme qui demandera à tout utlisateur d'entrer une note , à la suite de la note entrer il obtiendra une mention #
 
-def afficher_mention(note):
+# nous allons tout d'abord definir une fonction qui permettra à l'utilsateur d'entrer une note entre 0 et 20 y compris des notes decimale #
+def mention_note():
+    note = float(input("Entrez une note: "))
+# nous allons à présent demander à notre programme d'afficher les mentions en fonction des notes recu #
     if note >= 18:
         print("Excellent")
-    elif 16 <= note < 18:
+    elif note >= 16:
         print("Très bien")
-    elif 14 <= note < 16:
+    elif note >= 14:
         print("Bien")
-    elif 12 <= note < 14:
+    elif note >= 12:
         print("Satisfaisant")
-    elif 10 <= note < 12:
+    elif note >= 10:
         print("Passable")
     else:
         print("Échec")
-
-def main():
-    note = obtenir_note()
-    afficher_mention(note)
-
+# nous allons maintenant lancer le programme à travers notre fonction # 
 if __name__ == "__main__":
-    main()
-
+    mention_note()
